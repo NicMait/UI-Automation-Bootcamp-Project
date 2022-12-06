@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-06T20:44:28.313Z",
+    "end": "2022-12-06T20:44:37.681Z",
+    "duration": 9368,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "156d5253-d596-4d7f-9673-081c2931d7ac",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\login.cy.js",
+      "file": "cypress\\e2e\\tests\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dc44bb5a-625a-46b2-83a6-23a6d1492704",
+          "title": "Authentication",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Register a new user with email",
+              "fullTitle": "Authentication Register a new user with email",
+              "timedOut": null,
+              "duration": 9294,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Register using email\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click();\ncy.get('[type=email]').type('marsenal2@yopmail.com');\ncy.get('[type=password]').type('Password123!');\ncy.get(_authentication.default.signUpBtn).should('be.visible');\ncy.get(_authentication.default.signUpBtn).click(); // cy.get (Authentication.banner).should('be.visible')\n// cy.get (Authentication.banner).should('have.text', \"Automation Camp Store\")",
+              "err": {},
+              "uuid": "9d2573eb-a863-4e31-a745-e6157c8515f5",
+              "parentUUID": "dc44bb5a-625a-46b2-83a6-23a6d1492704",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9d2573eb-a863-4e31-a745-e6157c8515f5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9294,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
