@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-12-07T02:16:17.621Z",
+    "end": "2022-12-07T02:16:47.736Z",
+    "duration": 30115,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "026386d8-d7fd-4249-a90b-11d44c270d84",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\login.cy.js",
+      "file": "cypress\\e2e\\tests\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6ff07422-fc53-4a64-bcd4-f886106d04e8",
+          "title": "Authentication",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login valid user",
+              "fullTitle": "Authentication Login valid user",
+              "timedOut": null,
+              "duration": 13308,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with valid credentials\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click();\ncy.get('[type=email]').type('marsenal2@yopmail.com');\ncy.get('[type=password]').type('Password123!');\ncy.get(_authentication.default.submitBtn).should('be.visible');\ncy.get(_authentication.default.submitBtn).click();\ncy.get(_authentication.default.banner).should('be.visible');\ncy.get(_authentication.default.banner).should('have.text', \"Products\");",
+              "err": {},
+              "uuid": "f39b701b-cfef-4070-bde8-e7b28e258e14",
+              "parentUUID": "6ff07422-fc53-4a64-bcd4-f886106d04e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Log in with invalid password",
+              "fullTitle": "Authentication Log in with invalid password",
+              "timedOut": null,
+              "duration": 10775,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Login with valid credentials\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click();\ncy.get('[type=email]').type('letstest2@yopmail.com');\ncy.get('[type=password]').type('notTrue123!');\ncy.get(_authentication.default.submitBtn).should('be.visible');\ncy.get(_authentication.default.submitBtn).click();\ncy.get(_authentication.default.errorMsg).should('be.visible');\ncy.get(_authentication.default.errorMsg).should('have.text', 'Wrong email or password.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.auth0-global-message.auth0-global-message-error>' to have text 'Wrong email or password.', but the text was 'Your account has been blocked after multiple consecutive login attempts.'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<div.auth0-global-message.auth0-global-message-error>' to have text 'Wrong email or password.', but the text was 'Your account has been blocked after multiple consecutive login attempts.'\n    at Context.eval (webpack:///./cypress/e2e/tests/login.cy.js:30:35)",
+                "diff": "- 'Your account has been blocked after multiple consecutive login attempts.'\n+ 'Wrong email or password.'\n"
+              },
+              "uuid": "c013f057-df06-44bf-9498-0d96a2079e51",
+              "parentUUID": "6ff07422-fc53-4a64-bcd4-f886106d04e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Use Forgot Password Feature",
+              "fullTitle": "Authentication Use Forgot Password Feature",
+              "timedOut": null,
+              "duration": 5692,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with valid credentials\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click(); //user enters their email address\ncy.get('[type=email]').type('letstest2@yopmail.com');\ncy.get(_authentication.default.forgotPassword).should('be.visible');\ncy.get(_authentication.default.forgotPassword).click();\ncy.get(_authentication.default.submitBtn).click();\ncy.get(_authentication.default.resetMsg).should('be.visible');\ncy.get(_authentication.default.resetMsg).should('have.text', \"We've just sent you an email to reset your password.\");",
+              "err": {},
+              "uuid": "6fbb0aae-6bc4-4985-b408-4abd39578f3c",
+              "parentUUID": "6ff07422-fc53-4a64-bcd4-f886106d04e8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f39b701b-cfef-4070-bde8-e7b28e258e14",
+            "6fbb0aae-6bc4-4985-b408-4abd39578f3c"
+          ],
+          "failures": [
+            "c013f057-df06-44bf-9498-0d96a2079e51"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 29775,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-12-07T01:53:43.457Z",
+    "end": "2022-12-07T01:53:50.839Z",
+    "duration": 7382,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7d5c7f48-4278-4fc5-ad81-2a0468fa1c70",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\registration.cy.js",
+      "file": "cypress\\e2e\\tests\\registration.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3952a1a3-a805-4096-b401-fb8dd6a4d2fb",
+          "title": "Authentication",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Register a new user with email",
+              "fullTitle": "Authentication Register a new user with email",
+              "timedOut": null,
+              "duration": 2162,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Register using email\nconst email = faker.email.email();\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click();\ncy.get(_authentication.default.signUp).should('be.visible');\ncy.get(_authentication.default.signUp).click();\ncy.get('[type=email]').type('email');\ncy.get('[type=password]').type('Password123!');\ncy.get(_authentication.default.submitBtn).should('be.visible');\ncy.get(_authentication.default.submitBtn).click();\ncy.get(_authentication.default.banner).should('be.visible');\ncy.get(_authentication.default.banner).should('have.text', \"Products\");",
+              "err": {
+                "message": "ReferenceError: faker is not defined",
+                "estack": "ReferenceError: faker is not defined\n    at Context.eval (webpack:///./cypress/e2e/tests/registration.cy.js:11:17)",
+                "diff": null
+              },
+              "uuid": "3975558c-05e3-4ed6-bd75-c23d51c24523",
+              "parentUUID": "3952a1a3-a805-4096-b401-fb8dd6a4d2fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Register with invalid email address",
+              "fullTitle": "Authentication Register with invalid email address",
+              "timedOut": null,
+              "duration": 4984,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Verify email\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click();\ncy.get(_authentication.default.signUp).should('be.visible');\ncy.get(_authentication.default.signUp).click();\ncy.get('[type=email]').type('ree@com');\ncy.get('[type=password]').type('Password123!');\ncy.get(_authentication.default.submitBtn).should('be.visible');\ncy.get(_authentication.default.submitBtn).click();\ncy.get(_authentication.default.emailError).should('be.visible');\ncy.get(_authentication.default.emailError).should('have.text', \"Email is invalid\");",
+              "err": {},
+              "uuid": "7fc161b4-8a15-42ea-a4e5-e8bccd45ed74",
+              "parentUUID": "3952a1a3-a805-4096-b401-fb8dd6a4d2fb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7fc161b4-8a15-42ea-a4e5-e8bccd45ed74"
+          ],
+          "failures": [
+            "3975558c-05e3-4ed6-bd75-c23d51c24523"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 7146,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

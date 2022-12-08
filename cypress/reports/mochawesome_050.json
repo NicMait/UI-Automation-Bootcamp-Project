@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-08T01:56:58.657Z",
+    "end": "2022-12-08T01:57:23.553Z",
+    "duration": 24896,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ad292582-0d36-4496-aba9-c18307bf1f81",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\login.cy.js",
+      "file": "cypress\\e2e\\tests\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6201807c-0c41-455d-a903-9d8feedba22c",
+          "title": "Authentication",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login valid user",
+              "fullTitle": "Authentication Login valid user",
+              "timedOut": null,
+              "duration": 12689,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with valid credentials\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click();\ncy.get('[type=email]').type('marsenal2@yopmail.com');\ncy.get('[type=password]').type('Password123!');\ncy.get(_authentication.default.submitBtn).should('be.visible');\ncy.get(_authentication.default.submitBtn).click();\ncy.get(_authentication.default.banner).should('be.visible');\ncy.get(_authentication.default.banner).should('have.text', \"Products\");",
+              "err": {},
+              "uuid": "91431cf1-e916-46b6-99ed-fe09f632c7f5",
+              "parentUUID": "6201807c-0c41-455d-a903-9d8feedba22c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Log in with invalid email",
+              "fullTitle": "Authentication Log in with invalid email",
+              "timedOut": null,
+              "duration": 6522,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with valid credentials\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click();\ncy.get('[type=email]').type('wetest22@yopmail.com'); //email not registered\ncy.get('[type=password]').type('notTrue123!');\ncy.get(_authentication.default.submitBtn).should('be.visible');\ncy.get(_authentication.default.submitBtn).click();\ncy.get(_authentication.default.errorMsg).should('be.visible');\ncy.get(_authentication.default.errorMsg).should('have.text', 'Wrong email or password.');",
+              "err": {},
+              "uuid": "25d4ae62-bddc-477c-8e46-c85dd88598b2",
+              "parentUUID": "6201807c-0c41-455d-a903-9d8feedba22c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Use Forgot Password Feature",
+              "fullTitle": "Authentication Use Forgot Password Feature",
+              "timedOut": null,
+              "duration": 5169,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with valid credentials\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click(); //user enters their email address\ncy.get('[type=email]').type('letstest2@yopmail.com');\ncy.get(_authentication.default.forgotPassword).should('be.visible');\ncy.get(_authentication.default.forgotPassword).click();\ncy.get(_authentication.default.submitBtn).click();\ncy.get(_authentication.default.resetMsg).should('be.visible');\ncy.get(_authentication.default.resetMsg).should('have.text', \"We've just sent you an email to reset your password.\");",
+              "err": {},
+              "uuid": "114cc63b-dd3f-46c9-af3b-f05c660a6cd9",
+              "parentUUID": "6201807c-0c41-455d-a903-9d8feedba22c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "91431cf1-e916-46b6-99ed-fe09f632c7f5",
+            "25d4ae62-bddc-477c-8e46-c85dd88598b2",
+            "114cc63b-dd3f-46c9-af3b-f05c660a6cd9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24380,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

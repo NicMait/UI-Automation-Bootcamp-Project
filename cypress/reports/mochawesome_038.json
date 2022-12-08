@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-12-07T01:53:06.751Z",
+    "end": "2022-12-07T01:53:35.059Z",
+    "duration": 28308,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6818c493-c746-42b8-80dc-968cd27c778c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\products.cy.js",
+      "file": "cypress\\e2e\\tests\\products.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ea8c1a5a-f991-4258-b639-3d39164ba908",
+          "title": "Products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "View Product Details",
+              "fullTitle": "Products View Product Details",
+              "timedOut": null,
+              "duration": 14333,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with valid credentials\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click();\ncy.get('[type=email]').type('marsenal2@yopmail.com');\ncy.get('[type=password]').type('Password123!');\ncy.get(_authentication.default.submitBtn).should('be.visible');\ncy.get(_authentication.default.submitBtn).click(); //View the details of a product\ncy.get(_products.default.hat).click(); // cy.get(Products.hatDetails).should('be.visible')\n// cy.get(Products.hat).should('have.text', 'Quality Trucker Hat')\ncy.url().should('contain', 'quality-hat');",
+              "err": {},
+              "uuid": "b8ea533d-d366-4eb7-ae78-7f83748fc7b6",
+              "parentUUID": "ea8c1a5a-f991-4258-b639-3d39164ba908",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add A Product To Cart",
+              "fullTitle": "Products Add A Product To Cart",
+              "timedOut": null,
+              "duration": 13696,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Login with valid credentials\ncy.get('#signInOrRegister').should('be.visible');\ncy.get('#signInOrRegister').click();\ncy.get('[type=email]').type('marsenal2@yopmail.com');\ncy.get('[type=password]').type('Password123!');\ncy.get(_authentication.default.submitBtn).should('be.visible');\ncy.get(_authentication.default.submitBtn).click(); //Add a product to cart\ncy.get('button[type=\"button\"][data-item-id=\"quality-shoes-3\"]').scrollIntoView(); // cy.get(Products.heelsAddToCart).should('be.visible')\ncy.get(_products.default.heelsAddToCart).click();\ncy.get(_products.default.cart).should('have.text', '$20.00');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<button#top-cart.chakra-button.snipcart-checkout.css-186fne3>' to have text '$20.00', but the text was '$0.00'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<button#top-cart.chakra-button.snipcart-checkout.css-186fne3>' to have text '$20.00', but the text was '$0.00'\n    at Context.eval (webpack:///./cypress/e2e/tests/products.cy.js:42:25)",
+                "diff": "- '$0.00'\n+ '$20.00'\n"
+              },
+              "uuid": "601ce6ab-6454-46f3-b40a-1aa600df48a9",
+              "parentUUID": "ea8c1a5a-f991-4258-b639-3d39164ba908",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b8ea533d-d366-4eb7-ae78-7f83748fc7b6"
+          ],
+          "failures": [
+            "601ce6ab-6454-46f3-b40a-1aa600df48a9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 28029,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
